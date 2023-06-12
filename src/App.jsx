@@ -5,13 +5,26 @@ import TreeComponent from './TreeComponent'
 import './App.css'
 
 function App() {
-  const [obj, setObj] = useState({
-    name:'omer'
-  })
+  const [obj, setObj] = useState([{
+    id:1,
+    name:'omer',
+    children:[{id:2, name:'child'}]
+  },
+  {
+    id:3,
+    name:'teas',
+    children:[{id:4,name:'turkish tea'} , {id:5,name:'greek tea'}]
+  },
+  {
+    id:6,
+    name:'mahmut'
+  }
+])
 
   return (
     <>
-     <TreeComponent data={obj}></TreeComponent>
+     <TreeComponent data={obj}>
+     </TreeComponent>
     </>
   )
 }

@@ -1,35 +1,29 @@
-import { useEffect } from "react"
+import { useState } from "react"
 
 export default function TreeComponent({data}) {
     
-    useEffect(()=> {
-
-    },[])
     return (
-        <>
-        <ul id="myUL">
-        <li><span className="caret">Beverages</span>
-            <ul className="nested ">
-            <li>Water</li>
-            <li>Coffee</li>
-            <li><span className="caret">Tea</span>
-                <ul className="nested">
-                <li>Black Tea</li>
-                <li>White Tea</li>
-                <li><span className="caret">Green Tea</span>
-                    <ul className="nested">
-                    <li>Sencha</li>
-                    <li>Gyokuro</li>
-                    <li>Matcha</li>
-                    <li>Pi Lo Chun</li>
-                    </ul>
-                </li>
-                </ul>
-            </li>
+       data.map((value, index)=> (
+            
+            <ul>
+                <TreeItem children={value.children} name={value.name}></TreeItem>
             </ul>
+        )))
+  
+    
+   
+}
+
+function TreeItem ({name, children}) {
+    const [isExpansed, setExpansed] = useState(false)
+
+    return (
+        <li onClick={()=> setExpansed(!isExpansed)}>
+            {name}
+    
+            {children && isExpansed ? (
+                <TreeComponent data={children}></TreeComponent>
+            ):null}
         </li>
-        </ul>
-        
-        </>
     )
 }
