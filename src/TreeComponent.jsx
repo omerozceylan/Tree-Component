@@ -7,8 +7,8 @@ export default function TreeComponent({data}) {
     return (
        data.map((value, index)=> (
             
-            <ul>
-                <TreeItem children={value.children} name={value.name}></TreeItem>
+            <ul key={index}>
+                <TreeItem  children={value.children} name={value.name}></TreeItem>
             </ul>
         )))
   

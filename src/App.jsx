@@ -13,7 +13,7 @@ function App() {
   {
     id:3,
     name:'teas',
-    children:[{id:4,name:'turkish tea'} , {id:5,name:'greek tea'}]
+    children:[{id:4,name:'turkish tea' ,children:[{id:7,name:'mahmut tea'}]} , {id:5,name:'greek tea'}]
   },
   {
     id:6,
