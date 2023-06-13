@@ -2,6 +2,11 @@ ul, #myUL {
   list-style-type: none;
 }
 
+.listItem {
+  user-select: none;
+  cursor: pointer;
+}
+
 #myUL {
   margin: 0;
   padding: 0;

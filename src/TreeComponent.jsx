@@ -1,4 +1,6 @@
 import { useState } from "react"
+import './App.css'
+
 
 export default function TreeComponent({data}) {
     
@@ -18,7 +20,7 @@ function TreeItem ({name, children}) {
     const [isExpansed, setExpansed] = useState(false)
 
     return (
-        <li onClick={()=> setExpansed(!isExpansed)}>
+        <li className="listItem" onClick={()=> setExpansed(!isExpansed)}>
             {name}
     
             {children && isExpansed ? (
